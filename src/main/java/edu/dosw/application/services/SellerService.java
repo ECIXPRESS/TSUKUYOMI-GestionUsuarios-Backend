@@ -3,6 +3,7 @@ package edu.dosw.application.services;
 import edu.dosw.domain.model.Seller;
 import edu.dosw.domain.ports.SellerRepository;
 import edu.dosw.dto.SellerDTO;
+import edu.dosw.dto.SellerUpdateDTO;
 import edu.dosw.exception.BusinessException;
 import edu.dosw.exception.ResourceNotFoundException;
 import edu.dosw.utils.IdGenerator;
@@ -48,6 +49,29 @@ public class SellerService {
         return sellerRepository.save(seller);
     }
 
+    public Seller updateSeller(String sellerId, SellerUpdateDTO updateDTO) {
+        Seller seller = sellerRepository.findByUserId(sellerId)
+                .orElseThrow(() -> new ResourceNotFoundException("Seller not found"));
+        if (updateDTO.email() != null && !updateDTO.email().equals(seller.getEmail())) {
+            if (sellerRepository.existsByEmail(updateDTO.email())) {
+                throw new BusinessException("Email already exists");
+            }
+            seller.setEmail(updateDTO.email());
+        }
+        if (updateDTO.identityDocument() != null) {
+            seller.setIdentityDocument(updateDTO.identityDocument());
+        }
+        if (updateDTO.fullName() != null) {
+            seller.setFullName(updateDTO.fullName());
+        }
+        if (updateDTO.companyName() != null) {
+            seller.setCompanyName(updateDTO.companyName());
+        }
+        if (updateDTO.businessAddress() != null) {
+            seller.setBusinessAddress(updateDTO.businessAddress());
+        }
+        return sellerRepository.save(seller);
+    }
 
     public List<Seller> getAllSellers() {
         return sellerRepository.findAll();

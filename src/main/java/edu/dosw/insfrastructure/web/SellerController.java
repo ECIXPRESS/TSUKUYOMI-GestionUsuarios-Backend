@@ -2,6 +2,7 @@ package edu.dosw.insfrastructure.web;
 import edu.dosw.application.services.SellerService;
 import edu.dosw.domain.model.Seller;
 import edu.dosw.dto.SellerDTO;
+import edu.dosw.dto.SellerUpdateDTO;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -37,7 +38,11 @@ public class SellerController {
         return ResponseEntity.ok(sellers);
     }
 
-
+    @PutMapping("/{sellerId}")
+    public ResponseEntity<Seller> updateSeller(@PathVariable String sellerId, @RequestBody SellerUpdateDTO sellerUpdateDTO) {
+        Seller seller = sellerService.updateSeller(sellerId, sellerUpdateDTO);
+        return ResponseEntity.ok(seller);
+    }
 
     @DeleteMapping("/{sellerId}")
     public ResponseEntity<Void> deleteSeller(@PathVariable String sellerId) {

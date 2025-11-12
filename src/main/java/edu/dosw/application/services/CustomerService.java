@@ -3,6 +3,7 @@ package edu.dosw.application.services;
 import edu.dosw.domain.model.Customer;
 import edu.dosw.domain.ports.CustomerRepository;
 import edu.dosw.dto.CustomerDTO;
+import edu.dosw.dto.CustomerUpdateDTO;
 import edu.dosw.exception.BusinessException;
 import edu.dosw.exception.ResourceNotFoundException;
 import edu.dosw.utils.IdGenerator;
@@ -45,6 +46,28 @@ public class CustomerService {
         return customerRepository.save(customer);
     }
 
+    public Customer updateCustomer(String customerId, CustomerUpdateDTO updateDTO) {
+        Customer customer = customerRepository.findByUserId(customerId)
+                .orElseThrow(() -> new ResourceNotFoundException("Customer not found"));
+        if (updateDTO.email() != null && !updateDTO.email().equals(customer.getEmail())) {
+            if (customerRepository.existsByEmail(updateDTO.email())) {
+                throw new BusinessException("Email already exists");
+            }
+            customer.setEmail(updateDTO.email());
+        }
+
+        if (updateDTO.identityDocument() != null) {
+            customer.setIdentityDocument(updateDTO.identityDocument());
+        }
+        if (updateDTO.fullName() != null) {
+            customer.setFullName(updateDTO.fullName());
+        }
+        if (updateDTO.phoneNumber() != null) {
+            customer.setPhoneNumber(updateDTO.phoneNumber());
+        }
+
+        return customerRepository.save(customer);
+    }
 
 
     public void updatePassword(String customerId, String newPassword) {

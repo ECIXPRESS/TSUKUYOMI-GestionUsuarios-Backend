@@ -3,6 +3,7 @@ package edu.dosw.application.services;
 import edu.dosw.domain.model.Admin;
 import edu.dosw.domain.ports.AdminRepository;
 import edu.dosw.dto.AdminDTO;
+import edu.dosw.dto.AdminUpdateDTO;
 import edu.dosw.exception.BusinessException;
 import edu.dosw.exception.ResourceNotFoundException;
 import edu.dosw.utils.IdGenerator;
@@ -43,6 +44,28 @@ public class AdminService {
 
         return adminRepository.save(admin);
     }
+
+    public Admin updateAdmin(String adminId, AdminUpdateDTO updateDTO) {
+        Admin admin = adminRepository.findByUserId(adminId)
+                .orElseThrow(() -> new ResourceNotFoundException("Admin not found"));
+
+        if (updateDTO.email() != null && !updateDTO.email().equals(admin.getEmail())) {
+            if (adminRepository.existsByEmail(updateDTO.email())) {
+                throw new BusinessException("Email already exists");
+            }
+            admin.setEmail(updateDTO.email());
+        }
+
+        if (updateDTO.identityDocument() != null) {
+            admin.setIdentityDocument(updateDTO.identityDocument());
+        }
+        if (updateDTO.fullName() != null) {
+            admin.setFullName(updateDTO.fullName());
+        }
+
+        return adminRepository.save(admin);
+    }
+
 
     public void deleteAdmin(String adminId) {
         Admin admin = adminRepository.findByUserId(adminId)
