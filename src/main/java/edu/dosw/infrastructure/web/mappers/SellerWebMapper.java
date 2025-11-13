@@ -35,7 +35,7 @@ public class SellerWebMapper {
         return new SellerDTO(
                 seller.getEmail().value(),
                 seller.getFullName().value(),
-                "", // No exponemos password
+                "",
                 seller.getIdentityDocument().value(),
                 seller.getCompanyName(),
                 seller.getBusinessAddress()
