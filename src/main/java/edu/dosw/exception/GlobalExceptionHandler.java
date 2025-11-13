@@ -191,4 +191,15 @@ public class GlobalExceptionHandler {
                 new ErrorResponse(status.value(), status.getReasonPhrase(), code, message, path);
         return new ResponseEntity<>(errorResponse, status);
     }
+
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<ErrorResponse> handleIllegalArgument(
+            IllegalArgumentException ex, HttpServletRequest request) {
+        logger.warn("Illegal argument at {}: {}", request.getRequestURI(), ex.getMessage());
+        return buildResponse(
+                HttpStatus.BAD_REQUEST,
+                "INVALID_ARGUMENT",
+                ex.getMessage(),
+                request.getRequestURI());
+    }
 }

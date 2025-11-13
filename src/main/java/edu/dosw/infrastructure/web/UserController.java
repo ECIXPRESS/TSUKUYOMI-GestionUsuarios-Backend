@@ -20,7 +20,7 @@ public class UserController {
         return ResponseEntity.ok(credentials);
     }
 
-    @PostMapping("/credentials/auth")
+    @GetMapping("/credentials/auth")
     public ResponseEntity<UserCredentialsDTO> authenticateUser(@RequestParam String email,
                                                                @RequestParam String password) {
         UserCredentialsDTO credentials = getUserCredentialsUseCase.getUserByEmailAndPassword(new Email(email), password);
