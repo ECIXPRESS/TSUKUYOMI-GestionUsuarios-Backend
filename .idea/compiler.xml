@@ -6,10 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="ECIEXPRESS-backend" />
         <module name="ECIEXPRESS" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="ECIEXPRESS" target="17" />
       <module name="untitled" target="17" />
     </bytecodeTargetLevel>
   </component>
@@ -17,6 +19,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="ECIEXPRESS" options="-parameters" />
       <module name="ECIEXPRESS-GestionUsuarios-Backend" options="-parameters" />
+      <module name="ECIEXPRESS-backend" options="-parameters" />
       <module name="untitled" options="-parameters" />
     </option>
   </component>

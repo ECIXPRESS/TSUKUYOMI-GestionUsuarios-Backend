@@ -1,6 +1,6 @@
 package edu.dosw.exception;
 
-import edu.dosw.dto.ErrorResponse;
+import edu.dosw.application.dto.ErrorResponse;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.ConstraintViolationException;
 import jakarta.validation.ValidationException;
