@@ -20,7 +20,6 @@ public class PasswordResetController {
         Email email = new Email(request.email());
         passwordResetService.requestPasswordReset(email);
 
-        // Siempre retornar éxito para no revelar si el email existe
         return ResponseEntity.ok(new VerificationResponse(true, "If the email exists, a verification code has been sent"));
     }
 

@@ -5,22 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9b2b3764-48bd-4dca-be61-4d2152f72332" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/dosw/application/dto/PasswordResetConfirmRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/dosw/application/dto/PasswordResetRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/dosw/application/dto/VerificationResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/dosw/application/dto/VerifyCodeRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/dosw/application/ports/EventPublisherPort.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/dosw/application/services/PasswordResetService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/dosw/config/RedisConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/dosw/domain/model/ValueObject/VerificationCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/dosw/domain/ports/VerificationCodeRepositoryPort.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/dosw/infrastructure/event/EventWrapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/dosw/infrastructure/event/PasswordResetEventPublisher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/dosw/infrastructure/persistence/RedisVerificationCodeRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/dosw/infrastructure/web/PasswordResetController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/dosw/application/services/PasswordResetService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/dosw/application/services/PasswordResetService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/dosw/infrastructure/web/PasswordResetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/dosw/infrastructure/web/PasswordResetController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,11 +93,26 @@
       <workItem from="1763950617142" duration="80000" />
       <workItem from="1763986674211" duration="2549000" />
       <workItem from="1763990820455" duration="62000" />
-      <workItem from="1763997712230" duration="1257000" />
+      <workItem from="1763997712230" duration="1620000" />
+      <workItem from="1764012641541" duration="78000" />
+      <workItem from="1764030933008" duration="2198000" />
     </task>
+    <task id="LOCAL-00001" summary="feat: &quot;Recuperación de contraseña 100% funcional&quot;">
+      <option name="closed" value="true" />
+      <created>1763999401974</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1763999401974</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: &quot;Recuperación de contraseña 100% funcional&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: &quot;Recuperación de contraseña 100% funcional&quot;" />
   </component>
 </project>

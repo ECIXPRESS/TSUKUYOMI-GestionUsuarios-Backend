@@ -28,7 +28,6 @@ public class PasswordResetService {
     private static final int CODE_EXPIRY_MINUTES = 15;
 
     public void requestPasswordReset(Email email) {
-
         userRepository.findByEmail(email)
                 .ifPresent(user -> {
                     String code = generateVerificationCode();
@@ -44,7 +43,6 @@ public class PasswordResetService {
 
                     log.info("Password reset requested for email: {}, code: {}", email.value(), code);
                 });
-
     }
 
     public void verifyCode(Email email, String code) {
@@ -54,9 +52,6 @@ public class PasswordResetService {
         if (!verificationCode.isValid(code)) {
             throw new IllegalArgumentException("Invalid or expired verification code");
         }
-
-        VerificationCode usedCode = verificationCode.markAsUsed();
-        verificationCodeRepository.save(usedCode);
         eventPublisher.publishPasswordResetVerified(email, code);
 
         log.info("Verification code validated for email: {}", email.value());
@@ -77,13 +72,13 @@ public class PasswordResetService {
         user.changePassword(new PasswordHash(encodedPassword));
 
         userRepository.save(user);
+        VerificationCode usedCode = verificationCode.markAsUsed();
+        verificationCodeRepository.save(usedCode);
 
-        verificationCodeRepository.deleteByEmail(email);
         eventPublisher.publishPasswordResetCompleted(email, user, true);
 
         log.info("Password reset completed for email: {}", email.value());
     }
-
     private String generateVerificationCode() {
         return String.valueOf((int) (Math.random() * 900000) + 100000);
     }
