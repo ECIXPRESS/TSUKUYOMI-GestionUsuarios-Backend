@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="230e7b10-050c-4a50-b491-f32d57da1137" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/cd_dev.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.github/workflows/cd_prod.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +37,10 @@
     &quot;accountId&quot;: &quot;5cf60ca1-8553-4d99-bc4a-94c8c59be0a0&quot;
   }
 }</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -49,65 +51,65 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JUnit.AdminMongoMapperTest.executor": "Run",
-    "JUnit.AdminWebMapperTest.executor": "Run",
-    "JUnit.CreateAdminServiceTest.executor": "Run",
-    "JUnit.CreateCustomerServiceTest.executor": "Run",
-    "JUnit.CreateSellerServiceTest.executor": "Run",
-    "JUnit.CustomerMongoMapperTest.executor": "Run",
-    "JUnit.CustomerWebMapperTest.executor": "Run",
-    "JUnit.DeleteAdminServiceTest.executor": "Run",
-    "JUnit.DeleteCustomerServiceTest.executor": "Run",
-    "JUnit.DeleteSellerServiceTest.executor": "Run",
-    "JUnit.EmailTest.executor": "Run",
-    "JUnit.FullNameTest.executor": "Run",
-    "JUnit.GetAdminServiceTest.executor": "Run",
-    "JUnit.GetAllSellersServiceTest.executor": "Run",
-    "JUnit.GetCustomerServiceTest.executor": "Run",
-    "JUnit.GetSellerServiceTest.executor": "Run",
-    "JUnit.GetUserCredentialsServiceTest.executor": "Run",
-    "JUnit.IdentityDocumentTest.executor": "Run",
-    "JUnit.PasswordHashTest.executor": "Run",
-    "JUnit.PasswordResetEventPublisherTest.executor": "Run",
-    "JUnit.PasswordResetServiceTest.executor": "Run",
-    "JUnit.SellerMongoMapperTest.executor": "Run",
-    "JUnit.SellerWebMapperTest.executor": "Run",
-    "JUnit.UpdateAdminServiceTest.executor": "Run",
-    "JUnit.UpdateCustomerServiceTest.executor": "Run",
-    "JUnit.UpdatePasswordServiceTest.executor": "Run",
-    "JUnit.UpdateSellerServiceTest.executor": "Run",
-    "JUnit.UserIdTest.executor": "Run",
-    "JUnit.UserMongoMapperTest.executor": "Run",
-    "JUnit.UserTest.executor": "Run",
-    "JUnit.UserWebMapperTest.executor": "Run",
-    "JUnit.VerificationCodeTest.executor": "Run",
-    "Maven.ECIEXPRESS-backend [compile].executor": "Run",
-    "Maven.ECIEXPRESS-backend [install].executor": "Run",
-    "Maven.ECIEXPRESS-backend [test].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Spring Boot.Application.executor": "Run",
-    "git-widget-placeholder": "feature/PruebasUnitarias-ECIExpress__64",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/UNIVERSIDAD/DOSW/Proyecto ECIEXPRESS/TSUKUYOMI-GestionUsuarios-Backend",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.AdminMongoMapperTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AdminWebMapperTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CreateAdminServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CreateCustomerServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CreateSellerServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CustomerMongoMapperTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CustomerWebMapperTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DeleteAdminServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DeleteCustomerServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DeleteSellerServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.EmailTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FullNameTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GetAdminServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GetAllSellersServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GetCustomerServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GetSellerServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GetUserCredentialsServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.IdentityDocumentTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PasswordHashTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PasswordResetEventPublisherTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PasswordResetServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SellerMongoMapperTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SellerWebMapperTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UpdateAdminServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UpdateCustomerServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UpdatePasswordServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UpdateSellerServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserIdTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserMongoMapperTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserWebMapperTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.VerificationCodeTest.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.ECIEXPRESS-backend [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.ECIEXPRESS-backend [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.ECIEXPRESS-backend [test].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.Application.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/PruebasUnitarias-ECIExpress__64&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/UNIVERSIDAD/DOSW/Proyecto ECIEXPRESS/TSUKUYOMI-GestionUsuarios-Backend&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\UNIVERSIDAD\DOSW\Proyecto ECIEXPRESS\TSUKUYOMI-GestionUsuarios-Backend\src" />
@@ -231,7 +233,8 @@
       <workItem from="1764105004472" duration="4277000" />
       <workItem from="1764119688559" duration="877000" />
       <workItem from="1764120804278" duration="64000" />
-      <workItem from="1764164880081" duration="28267000" />
+      <workItem from="1764164880081" duration="29592000" />
+      <workItem from="1764284401558" duration="1026000" />
     </task>
     <servers />
   </component>
