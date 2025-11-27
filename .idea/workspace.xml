@@ -5,51 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="230e7b10-050c-4a50-b491-f32d57da1137" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/application/services/AdminServices/CreateAdminServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/application/services/AdminServices/DeleteAdminServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/application/services/AdminServices/GetAdminServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/application/services/AdminServices/UpdateAdminServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/application/services/CustomerServices/CreateCustomerServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/application/services/CustomerServices/DeleteCustomerServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/application/services/CustomerServices/GetCustomerServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/application/services/CustomerServices/UpdateCustomerServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/application/services/PasswordResetServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/application/services/SellerServices/CreateSellerServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/application/services/SellerServices/DeleteSellerServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/application/services/SellerServices/GetAllSellersServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/application/services/SellerServices/GetSellerServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/application/services/SellerServices/UpdateSellerServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/application/services/UpdatePasswordServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/application/services/UserServices/GetUserCredentialsServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/domain/model/UserTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/domain/model/ValueObject/EmailTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/domain/model/ValueObject/FullNameTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/domain/model/ValueObject/IdentityDocumentTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/domain/model/ValueObject/PasswordHashTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/domain/model/ValueObject/UserIdTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/domain/model/ValueObject/VerificationCodeTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/infrastructure/event/PasswordResetEventPublisherTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/infrastructure/persistence/mappers/AdminMongoMapperTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/infrastructure/persistence/mappers/CustomerMongoMapperTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/infrastructure/persistence/mappers/SellerMongoMapperTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/infrastructure/persistence/mappers/UserMongoMapperTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/infrastructure/web/mappers/AdminWebMapperTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/infrastructure/web/mappers/CustomerWebMapperTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/infrastructure/web/mappers/SellerWebMapperTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/infrastructure/web/mappers/UserWebMapperTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ECIEXPRESS-GestionUsuarios-Backend.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/dosw/application/dto/AdminDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/dosw/application/dto/AdminDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/dosw/application/ports/AdminUseCases/CreateAdminUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/dosw/application/ports/AdminUseCases/CreateAdminUseCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/dosw/domain/model/ValueObject/VerificationCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/dosw/domain/model/ValueObject/VerificationCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/dosw/domain/ports/AdminRepositoryPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/dosw/domain/ports/AdminRepositoryPort.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +17,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="GitHub Workflow" />
       </list>
     </option>
   </component>
@@ -270,7 +228,7 @@
       <workItem from="1764105004472" duration="4277000" />
       <workItem from="1764119688559" duration="877000" />
       <workItem from="1764120804278" duration="64000" />
-      <workItem from="1764164880081" duration="24328000" />
+      <workItem from="1764164880081" duration="25079000" />
     </task>
     <servers />
   </component>
