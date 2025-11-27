@@ -1,4 +1,3 @@
-// VerificationCode.java
 package edu.dosw.domain.model.ValueObject;
 
 import java.time.LocalDateTime;

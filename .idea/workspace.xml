@@ -4,10 +4,52 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b2b3764-48bd-4dca-be61-4d2152f72332" name="Changes" comment="">
+    <list default="true" id="230e7b10-050c-4a50-b491-f32d57da1137" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/application/services/AdminServices/CreateAdminServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/application/services/AdminServices/DeleteAdminServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/application/services/AdminServices/GetAdminServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/application/services/AdminServices/UpdateAdminServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/application/services/CustomerServices/CreateCustomerServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/application/services/CustomerServices/DeleteCustomerServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/application/services/CustomerServices/GetCustomerServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/application/services/CustomerServices/UpdateCustomerServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/application/services/PasswordResetServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/application/services/SellerServices/CreateSellerServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/application/services/SellerServices/DeleteSellerServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/application/services/SellerServices/GetAllSellersServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/application/services/SellerServices/GetSellerServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/application/services/SellerServices/UpdateSellerServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/application/services/UpdatePasswordServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/application/services/UserServices/GetUserCredentialsServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/domain/model/UserTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/domain/model/ValueObject/EmailTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/domain/model/ValueObject/FullNameTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/domain/model/ValueObject/IdentityDocumentTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/domain/model/ValueObject/PasswordHashTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/domain/model/ValueObject/UserIdTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/domain/model/ValueObject/VerificationCodeTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/infrastructure/event/PasswordResetEventPublisherTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/infrastructure/persistence/mappers/AdminMongoMapperTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/infrastructure/persistence/mappers/CustomerMongoMapperTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/infrastructure/persistence/mappers/SellerMongoMapperTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/infrastructure/persistence/mappers/UserMongoMapperTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/infrastructure/web/mappers/AdminWebMapperTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/infrastructure/web/mappers/CustomerWebMapperTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/infrastructure/web/mappers/SellerWebMapperTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/dosw/infrastructure/web/mappers/UserWebMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ECIEXPRESS-GestionUsuarios-Backend.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/dosw/application/services/PasswordResetService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/dosw/application/services/PasswordResetService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/dosw/infrastructure/web/PasswordResetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/dosw/infrastructure/web/PasswordResetController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/dosw/application/dto/AdminDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/dosw/application/dto/AdminDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/dosw/application/ports/AdminUseCases/CreateAdminUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/dosw/application/ports/AdminUseCases/CreateAdminUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/dosw/domain/model/ValueObject/VerificationCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/dosw/domain/model/ValueObject/VerificationCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/dosw/domain/ports/AdminRepositoryPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/dosw/domain/ports/AdminRepositoryPort.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,97 +64,225 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="main" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
     &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;MAGG0059&quot;
+    &quot;assignee&quot;: &quot;Juanseom&quot;
   }
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/ECIXPRESS/ECIEXPRESS-GestionUsuarios-Backend&quot;,
-    &quot;accountId&quot;: &quot;13c5db88-6b1f-477d-9d37-8f0ae1df3d90&quot;
+    &quot;url&quot;: &quot;https://github.com/ECIXPRESS/TSUKUYOMI-GestionUsuarios-Backend.git&quot;,
+    &quot;accountId&quot;: &quot;5cf60ca1-8553-4d99-bc4a-94c8c59be0a0&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 0
 }</component>
-  <component name="ProjectId" id="35uCXezbVr2HVEvQuQcdK4l7ANR" />
+  <component name="ProjectId" id="35kLW8EAov5m1XGawjxDRiITkzs" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/primeraGestion&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.AdminMongoMapperTest.executor": "Run",
+    "JUnit.AdminWebMapperTest.executor": "Run",
+    "JUnit.CreateAdminServiceTest.executor": "Run",
+    "JUnit.CreateCustomerServiceTest.executor": "Run",
+    "JUnit.CreateSellerServiceTest.executor": "Run",
+    "JUnit.CustomerMongoMapperTest.executor": "Run",
+    "JUnit.CustomerWebMapperTest.executor": "Run",
+    "JUnit.DeleteAdminServiceTest.executor": "Run",
+    "JUnit.DeleteCustomerServiceTest.executor": "Run",
+    "JUnit.DeleteSellerServiceTest.executor": "Run",
+    "JUnit.EmailTest.executor": "Run",
+    "JUnit.FullNameTest.executor": "Run",
+    "JUnit.GetAdminServiceTest.executor": "Run",
+    "JUnit.GetAllSellersServiceTest.executor": "Run",
+    "JUnit.GetCustomerServiceTest.executor": "Run",
+    "JUnit.GetSellerServiceTest.executor": "Run",
+    "JUnit.GetUserCredentialsServiceTest.executor": "Run",
+    "JUnit.IdentityDocumentTest.executor": "Run",
+    "JUnit.PasswordHashTest.executor": "Run",
+    "JUnit.PasswordResetEventPublisherTest.executor": "Run",
+    "JUnit.PasswordResetServiceTest.executor": "Run",
+    "JUnit.SellerMongoMapperTest.executor": "Run",
+    "JUnit.SellerWebMapperTest.executor": "Run",
+    "JUnit.UpdateAdminServiceTest.executor": "Run",
+    "JUnit.UpdateCustomerServiceTest.executor": "Run",
+    "JUnit.UpdatePasswordServiceTest.executor": "Run",
+    "JUnit.UpdateSellerServiceTest.executor": "Run",
+    "JUnit.UserIdTest.executor": "Run",
+    "JUnit.UserMongoMapperTest.executor": "Run",
+    "JUnit.UserTest.executor": "Run",
+    "JUnit.UserWebMapperTest.executor": "Run",
+    "JUnit.VerificationCodeTest.executor": "Run",
+    "Maven.ECIEXPRESS-backend [compile].executor": "Run",
+    "Maven.ECIEXPRESS-backend [install].executor": "Run",
+    "Maven.ECIEXPRESS-backend [test].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.Application.executor": "Run",
+    "git-widget-placeholder": "feature/PruebasUnitarias-ECIExpress__64",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/UNIVERSIDAD/DOSW/Proyecto ECIEXPRESS/TSUKUYOMI-GestionUsuarios-Backend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager">
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\UNIVERSIDAD\DOSW\Proyecto ECIEXPRESS\TSUKUYOMI-GestionUsuarios-Backend\src" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="edu.dosw.domain.model.ValueObject" />
+      <recent name="edu.dosw.domain.model" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.PasswordResetEventPublisherTest">
+    <configuration name="AdminWebMapperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ECIEXPRESS-backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.dosw.infrastructure.web.mappers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.dosw.infrastructure.web.mappers" />
+      <option name="MAIN_CLASS_NAME" value="edu.dosw.infrastructure.web.mappers.AdminWebMapperTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustomerWebMapperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ECIEXPRESS-backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.dosw.infrastructure.web.mappers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.dosw.infrastructure.web.mappers" />
+      <option name="MAIN_CLASS_NAME" value="edu.dosw.infrastructure.web.mappers.CustomerWebMapperTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PasswordResetEventPublisherTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ECIEXPRESS-backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.dosw.infrastructure.event.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.dosw.infrastructure.event" />
+      <option name="MAIN_CLASS_NAME" value="edu.dosw.infrastructure.event.PasswordResetEventPublisherTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SellerWebMapperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ECIEXPRESS-backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.dosw.infrastructure.web.mappers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.dosw.infrastructure.web.mappers" />
+      <option name="MAIN_CLASS_NAME" value="edu.dosw.infrastructure.web.mappers.SellerWebMapperTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserWebMapperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ECIEXPRESS-backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.dosw.infrastructure.web.mappers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.dosw.infrastructure.web.mappers" />
+      <option name="MAIN_CLASS_NAME" value="edu.dosw.infrastructure.web.mappers.UserWebMapperTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="ECIEXPRESS-GestionUsuarios-Backend" />
+      <module name="ECIEXPRESS-backend" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="edu.dosw.Application" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.PasswordResetEventPublisherTest" />
+        <item itemvalue="JUnit.UserWebMapperTest" />
+        <item itemvalue="JUnit.SellerWebMapperTest" />
+        <item itemvalue="JUnit.CustomerWebMapperTest" />
+        <item itemvalue="JUnit.AdminWebMapperTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.27397.103" />
-        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.27397.103" />
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.28238.7" />
+        <option value="bundled-js-predefined-d6986cc7102b-a71380e98a7c-JavaScript-IU-252.28238.7" />
       </set>
     </attachedChunks>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="9b2b3764-48bd-4dca-be61-4d2152f72332" name="Changes" comment="" />
-      <created>1763950613171</created>
+      <changelist id="230e7b10-050c-4a50-b491-f32d57da1137" name="Changes" comment="" />
+      <created>1763649152276</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1763950613171</updated>
-      <workItem from="1763950617142" duration="80000" />
-      <workItem from="1763986674211" duration="2549000" />
-      <workItem from="1763990820455" duration="62000" />
-      <workItem from="1763997712230" duration="1620000" />
-      <workItem from="1764012641541" duration="78000" />
-      <workItem from="1764030933008" duration="2198000" />
+      <updated>1763649152276</updated>
+      <workItem from="1763649154995" duration="2176000" />
+      <workItem from="1763681770403" duration="1249000" />
+      <workItem from="1763683069621" duration="66000" />
+      <workItem from="1764105004472" duration="4277000" />
+      <workItem from="1764119688559" duration="877000" />
+      <workItem from="1764120804278" duration="64000" />
+      <workItem from="1764164880081" duration="24328000" />
     </task>
-    <task id="LOCAL-00001" summary="feat: &quot;Recuperación de contraseña 100% funcional&quot;">
-      <option name="closed" value="true" />
-      <created>1763999401974</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1763999401974</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: &quot;Recuperación de contraseña 100% funcional&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: &quot;Recuperación de contraseña 100% funcional&quot;" />
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
   </component>
 </project>

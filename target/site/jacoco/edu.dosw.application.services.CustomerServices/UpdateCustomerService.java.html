@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UpdateCustomerService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ECIEXPRESS</a> &gt; <a href="index.source.html" class="el_package">edu.dosw.application.services.CustomerServices</a> &gt; <span class="el_source">UpdateCustomerService.java</span></div><h1>UpdateCustomerService.java</h1><pre class="source lang-java linenums">package edu.dosw.application.services.CustomerServices;
+
+import edu.dosw.application.ports.CustomerUseCases.UpdateCustomerUseCase;
+import edu.dosw.application.dto.command.CustomerCommands.UpdateCustomerCommand;
+import edu.dosw.application.dto.CustomerUpdateDTO;
+import edu.dosw.domain.model.Customer;
+import edu.dosw.domain.model.ValueObject.*;
+import edu.dosw.domain.ports.CustomerRepositoryPort;
+import edu.dosw.domain.ports.UserRepositoryPort;
+import edu.dosw.exception.ResourceNotFoundException;
+import edu.dosw.infrastructure.web.mappers.CustomerWebMapper;
+import lombok.RequiredArgsConstructor;
+
+
+<span class="fc" id="L15">@RequiredArgsConstructor</span>
+public class UpdateCustomerService implements UpdateCustomerUseCase {
+
+    private final CustomerRepositoryPort customerRepository;
+    private final UserRepositoryPort userRepository;
+    private final CustomerWebMapper customerWebMapper;
+
+    @Override
+    public CustomerUpdateDTO updateCustomer(UserId customerId, UpdateCustomerCommand command) {
+<span class="fc" id="L24">        Customer customer = customerRepository.findByUserId(customerId)</span>
+<span class="fc" id="L25">                .orElseThrow(() -&gt; new ResourceNotFoundException(&quot;Customer not found&quot;));</span>
+<span class="fc bfc" id="L26" title="All 4 branches covered.">        if (command.email() != null &amp;&amp; !command.email().equals(customer.getEmail().value())) {</span>
+<span class="fc" id="L27">            Email newEmail = new Email(command.email());</span>
+<span class="fc bfc" id="L28" title="All 2 branches covered.">            if (userRepository.existsByEmail(newEmail)) {</span>
+<span class="fc" id="L29">                throw new IllegalArgumentException(&quot;Email already exists&quot;);</span>
+            }
+        }
+<span class="fc" id="L32">        Customer updatedCustomer = new Customer(</span>
+<span class="fc" id="L33">                customer.getUserId(),</span>
+<span class="fc bfc" id="L34" title="All 2 branches covered.">                command.identityDocument() != null ?</span>
+<span class="fc" id="L35">                        new IdentityDocument(command.identityDocument()) : customer.getIdentityDocument(),</span>
+<span class="fc bfc" id="L36" title="All 2 branches covered.">                command.email() != null ?</span>
+<span class="fc" id="L37">                        new Email(command.email()) : customer.getEmail(),</span>
+<span class="fc bfc" id="L38" title="All 2 branches covered.">                command.fullName() != null ?</span>
+<span class="fc" id="L39">                        new FullName(command.fullName()) : customer.getFullName(),</span>
+<span class="fc" id="L40">                customer.getPasswordHash(),</span>
+<span class="fc bfc" id="L41" title="All 2 branches covered.">                command.phoneNumber() != null ? command.phoneNumber() : customer.getPhoneNumber()</span>
+        );
+<span class="fc" id="L43">        Customer savedCustomer = customerRepository.save(updatedCustomer);</span>
+<span class="fc" id="L44">        userRepository.save(savedCustomer);</span>
+<span class="fc" id="L45">        return customerWebMapper.toUpdateDTO(savedCustomer);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span></div></body></html>

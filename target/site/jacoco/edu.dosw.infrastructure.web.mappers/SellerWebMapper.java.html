@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>SellerWebMapper.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ECIEXPRESS</a> &gt; <a href="index.source.html" class="el_package">edu.dosw.infrastructure.web.mappers</a> &gt; <span class="el_source">SellerWebMapper.java</span></div><h1>SellerWebMapper.java</h1><pre class="source lang-java linenums">package edu.dosw.infrastructure.web.mappers;
+
+import edu.dosw.application.dto.command.SellerCommands.CreateSellerCommand;
+import edu.dosw.application.dto.command.SellerCommands.UpdateSellerCommand;
+import edu.dosw.domain.model.Seller;
+import edu.dosw.application.dto.SellerDTO;
+import edu.dosw.application.dto.SellerUpdateDTO;
+import org.springframework.stereotype.Component;
+
+@Component
+<span class="fc" id="L11">public class SellerWebMapper {</span>
+
+    public CreateSellerCommand toCommand(SellerDTO dto) {
+<span class="fc" id="L14">        return new CreateSellerCommand(</span>
+<span class="fc" id="L15">                dto.identityDocument(),</span>
+<span class="fc" id="L16">                dto.email(),</span>
+<span class="fc" id="L17">                dto.fullName(),</span>
+<span class="fc" id="L18">                dto.password(),</span>
+<span class="fc" id="L19">                dto.companyName(),</span>
+<span class="fc" id="L20">                dto.businessAddress()</span>
+        );
+    }
+
+    public UpdateSellerCommand toCommand(SellerUpdateDTO dto) {
+<span class="fc" id="L25">        return new UpdateSellerCommand(</span>
+<span class="fc" id="L26">                dto.identityDocument(),</span>
+<span class="fc" id="L27">                dto.email(),</span>
+<span class="fc" id="L28">                dto.fullName(),</span>
+<span class="fc" id="L29">                dto.companyName(),</span>
+<span class="fc" id="L30">                dto.businessAddress()</span>
+        );
+    }
+
+    public SellerDTO toDTO(Seller seller) {
+<span class="fc" id="L35">        return new SellerDTO(</span>
+<span class="fc" id="L36">                seller.getEmail().value(),</span>
+<span class="fc" id="L37">                seller.getFullName().value(),</span>
+                &quot;&quot;,
+<span class="fc" id="L39">                seller.getIdentityDocument().value(),</span>
+<span class="fc" id="L40">                seller.getCompanyName(),</span>
+<span class="fc" id="L41">                seller.getBusinessAddress()</span>
+        );
+    }
+
+    public SellerUpdateDTO toUpdateDTO(Seller seller) {
+<span class="fc" id="L46">        return new SellerUpdateDTO(</span>
+<span class="fc" id="L47">                seller.getIdentityDocument().value(),</span>
+<span class="fc" id="L48">                seller.getEmail().value(),</span>
+<span class="fc" id="L49">                seller.getFullName().value(),</span>
+<span class="fc" id="L50">                seller.getCompanyName(),</span>
+<span class="fc" id="L51">                seller.getBusinessAddress()</span>
+        );
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span></div></body></html>

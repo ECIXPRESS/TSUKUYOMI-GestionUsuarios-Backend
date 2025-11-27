@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>SellerController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ECIEXPRESS</a> &gt; <a href="index.source.html" class="el_package">edu.dosw.infrastructure.web</a> &gt; <span class="el_source">SellerController.java</span></div><h1>SellerController.java</h1><pre class="source lang-java linenums">package edu.dosw.infrastructure.web;
+
+import edu.dosw.application.ports.SellerUseCases.*;
+import edu.dosw.application.dto.command.SellerCommands.CreateSellerCommand;
+import edu.dosw.application.dto.command.SellerCommands.UpdateSellerCommand;
+import edu.dosw.domain.model.Seller;
+import edu.dosw.domain.model.ValueObject.UserId;
+import edu.dosw.application.dto.SellerDTO;
+import edu.dosw.application.dto.SellerUpdateDTO;
+import edu.dosw.infrastructure.web.mappers.SellerWebMapper;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping(&quot;/users/sellers&quot;)
+<span class="nc" id="L19">@RequiredArgsConstructor</span>
+public class SellerController {
+
+    private final CreateSellerUseCase createSellerUseCase;
+    private final GetSellerUseCase getSellerUseCase;
+    private final GetAllSellersUseCase getAllSellersUseCase;
+    private final UpdateSellerUseCase updateSellerUseCase;
+    private final DeleteSellerUseCase deleteSellerUseCase;
+    private final SellerWebMapper sellerWebMapper;
+
+    @PostMapping
+    public ResponseEntity&lt;SellerDTO&gt; createSeller(@RequestBody SellerDTO sellerDTO) {
+<span class="nc" id="L31">        CreateSellerCommand command = sellerWebMapper.toCommand(sellerDTO);</span>
+<span class="nc" id="L32">        SellerDTO result = createSellerUseCase.createSeller(command);</span>
+<span class="nc" id="L33">        return ResponseEntity.ok(result);</span>
+    }
+
+    @GetMapping(&quot;/{sellerId}&quot;)
+    public ResponseEntity&lt;SellerDTO&gt; getSeller(@PathVariable String sellerId) {
+<span class="nc" id="L38">        SellerDTO seller = getSellerUseCase.getSellerById(new UserId(sellerId));</span>
+<span class="nc" id="L39">        return ResponseEntity.ok(seller);</span>
+    }
+
+    @GetMapping
+    public ResponseEntity&lt;List&lt;Seller&gt;&gt; getAllSellers() {
+<span class="nc" id="L44">        List&lt;Seller&gt; sellers = getAllSellersUseCase.getAllSellers();</span>
+<span class="nc" id="L45">        return ResponseEntity.ok(sellers);</span>
+    }
+
+    @GetMapping(&quot;/pending&quot;)
+    public ResponseEntity&lt;List&lt;Seller&gt;&gt; getPendingSellers() {
+<span class="nc" id="L50">        List&lt;Seller&gt; sellers = getAllSellersUseCase.getPendingSellers();</span>
+<span class="nc" id="L51">        return ResponseEntity.ok(sellers);</span>
+    }
+
+    @PutMapping(&quot;/{sellerId}&quot;)
+    public ResponseEntity&lt;SellerUpdateDTO&gt; updateSeller(@PathVariable String sellerId,
+                                                        @RequestBody SellerUpdateDTO sellerUpdateDTO) {
+<span class="nc" id="L57">        UpdateSellerCommand command = sellerWebMapper.toCommand(sellerUpdateDTO);</span>
+<span class="nc" id="L58">        SellerUpdateDTO result = updateSellerUseCase.updateSeller(new UserId(sellerId), command);</span>
+<span class="nc" id="L59">        return ResponseEntity.ok(result);</span>
+    }
+
+    @DeleteMapping(&quot;/{sellerId}&quot;)
+    public ResponseEntity&lt;Void&gt; deleteSeller(@PathVariable String sellerId) {
+<span class="nc" id="L64">        deleteSellerUseCase.deleteSeller(new UserId(sellerId));</span>
+<span class="nc" id="L65">        return ResponseEntity.noContent().build();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span></div></body></html>

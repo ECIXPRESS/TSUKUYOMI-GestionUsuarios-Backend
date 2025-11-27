@@ -35,12 +35,10 @@
         <sonar.coverage.jacoco.xmlReportPaths>target/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
         <sonar.coverage.exclusions>
             src/**/config/**,
-            src/**/model/**,
-            src/**/dto/**,
-            src/**/strategy/**,
-            src/**/configurators/**,
             src/**/exception/**,
-            src/**/default/**,
+            src/**/documents/**,
+            src/**/dto/**,
+            src/**/enums/**
             src/**/utils/**
         </sonar.coverage.exclusions>
         <jacoco.version>0.8.13</jacoco.version>
@@ -210,12 +208,10 @@
                         <configuration>
                             <excludes>
                                 <exclude>**/config/**</exclude>
-                                <exclude>**/model/**</exclude>
                                 <exclude>**/dto/**</exclude>
-                                <exclude>**/strategy/**</exclude>
-                                <exclude>**/configurators/**</exclude>
+                                <exclude>**/documents/**</exclude>
+                                <exclude>**/enums/**</exclude>
                                 <exclude>**/exception/**</exclude>
-                                <exclude>**/default/**</exclude>
                                 <exclude>**/utils/**</exclude>
                             </excludes>
                         </configuration>
@@ -229,10 +225,10 @@
                         <configuration>
                             <rules>
                                 <rule>
-                                    <element>PACKAGE</element>
+                                    <element>BUNDLE</element>
                                     <limits>
                                         <limit>
-                                            <counter>CLASS</counter>
+                                            <counter>INSTRUCTION</counter>
                                             <value>COVEREDRATIO</value>
                                         </limit>
                                     </limits>
@@ -240,12 +236,10 @@
                             </rules>
                             <excludes>
                                 <exclude>**/config/**</exclude>
-                                <exclude>**/dto/**</exclude>
-                                <exclude>**/model/**</exclude>
-                                <exclude>**/strategy/**</exclude>
-                                <exclude>**/configurators/**</exclude>
                                 <exclude>**/exception/**</exclude>
-                                <exclude>**/default/**</exclude>
+                                <exclude>**/documents/**</exclude>
+                                <exclude>**/dto/**</exclude>
+                                <exclude>**/enums/**</exclude>
                                 <exclude>**/utils/**</exclude>
                             </excludes>
                         </configuration>
