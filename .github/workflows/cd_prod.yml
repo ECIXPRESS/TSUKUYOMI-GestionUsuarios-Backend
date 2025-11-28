@@ -1,4 +1,4 @@
-name: CD - Deploy QR Backend (Prod)
+name: CD - Deploy Users Management Backend (Prod)
 
 on:
   push:
