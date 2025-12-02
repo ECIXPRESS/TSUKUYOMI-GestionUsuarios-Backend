@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CustomerMongoMapper.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ECIEXPRESS</a> &gt; <a href="index.source.html" class="el_package">edu.dosw.infrastructure.persistence.mappers</a> &gt; <span class="el_source">CustomerMongoMapper.java</span></div><h1>CustomerMongoMapper.java</h1><pre class="source lang-java linenums">package edu.dosw.infrastructure.persistence.mappers;
+
+
+import edu.dosw.domain.model.Customer;
+import edu.dosw.domain.model.ValueObject.*;
+import edu.dosw.infrastructure.persistence.documents.CustomerDocument;
+import org.springframework.stereotype.Component;
+
+@Component
+<span class="fc" id="L10">public class CustomerMongoMapper {</span>
+
+    public CustomerDocument toDocument(Customer customer) {
+<span class="fc" id="L13">        return CustomerDocument.builder()</span>
+<span class="fc" id="L14">                .userId(customer.getUserId().value())</span>
+<span class="fc" id="L15">                .identityDocument(customer.getIdentityDocument().value())</span>
+<span class="fc" id="L16">                .email(customer.getEmail().value())</span>
+<span class="fc" id="L17">                .fullName(customer.getFullName().value())</span>
+<span class="fc" id="L18">                .passwordHash(customer.getPasswordHash().value())</span>
+<span class="fc" id="L19">                .role(customer.getRole())</span>
+<span class="fc" id="L20">                .phoneNumber(customer.getPhoneNumber())</span>
+<span class="fc" id="L21">                .createdAt(customer.getCreatedAt())</span>
+<span class="fc" id="L22">                .build();</span>
+    }
+
+    public Customer toDomain(CustomerDocument document) {
+<span class="fc bfc" id="L26" title="All 2 branches covered.">        if (document == null) return null;</span>
+
+<span class="fc" id="L28">        return new Customer(</span>
+<span class="fc" id="L29">                new UserId(document.getUserId()),</span>
+<span class="fc" id="L30">                new IdentityDocument(document.getIdentityDocument()),</span>
+<span class="fc" id="L31">                new Email(document.getEmail()),</span>
+<span class="fc" id="L32">                new FullName(document.getFullName()),</span>
+<span class="fc" id="L33">                new PasswordHash(document.getPasswordHash()),</span>
+<span class="fc" id="L34">                document.getPhoneNumber()</span>
+        );
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span></div></body></html>

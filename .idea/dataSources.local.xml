@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="dataSourceStorageLocal" created-in="IU-252.27397.103">
-    <data-source name="ECIEXPRESS@clustereciexpress.m7ljcsf.mongodb.net" uuid="cfb821f2-c2de-4063-bcca-b2ed041a28ca">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MONGO" />
-      <schema-mapping />
-    </data-source>
-  </component>
-</project>

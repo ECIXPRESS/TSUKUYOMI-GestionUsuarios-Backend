@@ -6,3 +6,4 @@ public record AdminDTO(
         String fullName,
         String password
 ) {}
+

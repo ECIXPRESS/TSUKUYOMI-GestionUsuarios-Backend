@@ -29,18 +29,17 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <lombok.version>1.18.30</lombok.version>
 
-        <sonar.projectKey>ECIEXPRESS</sonar.projectKey>
-        <sonar.projectName>ECIEXPRESS</sonar.projectName>
-        <sonar.host.url>http://localhost:9000</sonar.host.url>
+        <sonar.organization>ecixpress</sonar.organization>
+        <sonar.projectKey>ECIXPRESS_TSUKUYOMI-GestionUsuarios-Backend</sonar.projectKey>
+        <sonar.projectName>TSUKUYOMI-GestionUsuarios-Backend</sonar.projectName>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
         <sonar.coverage.jacoco.xmlReportPaths>target/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
         <sonar.coverage.exclusions>
             src/**/config/**,
-            src/**/model/**,
-            src/**/dto/**,
-            src/**/strategy/**,
-            src/**/configurators/**,
             src/**/exception/**,
-            src/**/default/**,
+            src/**/documents/**,
+            src/**/dto/**,
+            src/**/enums/**
             src/**/utils/**
         </sonar.coverage.exclusions>
         <jacoco.version>0.8.13</jacoco.version>
@@ -56,6 +55,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
+        <!-- Spring Boot Actuator -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
         <!-- Spring Boot MongoDB -->
@@ -150,6 +155,7 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-params</artifactId>
@@ -169,17 +175,22 @@
             <version>0.11.5</version>
             <scope>runtime</scope>
         </dependency>
+
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt-jackson</artifactId>
             <version>0.11.5</version>
             <scope>runtime</scope>
         </dependency>
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <scope>provided</scope>
         </dependency>
+
+
+
     </dependencies>
 
     <build>
@@ -210,12 +221,10 @@
                         <configuration>
                             <excludes>
                                 <exclude>**/config/**</exclude>
-                                <exclude>**/model/**</exclude>
                                 <exclude>**/dto/**</exclude>
-                                <exclude>**/strategy/**</exclude>
-                                <exclude>**/configurators/**</exclude>
+                                <exclude>**/documents/**</exclude>
+                                <exclude>**/enums/**</exclude>
                                 <exclude>**/exception/**</exclude>
-                                <exclude>**/default/**</exclude>
                                 <exclude>**/utils/**</exclude>
                             </excludes>
                         </configuration>
@@ -229,10 +238,10 @@
                         <configuration>
                             <rules>
                                 <rule>
-                                    <element>PACKAGE</element>
+                                    <element>BUNDLE</element>
                                     <limits>
                                         <limit>
-                                            <counter>CLASS</counter>
+                                            <counter>INSTRUCTION</counter>
                                             <value>COVEREDRATIO</value>
                                         </limit>
                                     </limits>
@@ -240,12 +249,10 @@
                             </rules>
                             <excludes>
                                 <exclude>**/config/**</exclude>
-                                <exclude>**/dto/**</exclude>
-                                <exclude>**/model/**</exclude>
-                                <exclude>**/strategy/**</exclude>
-                                <exclude>**/configurators/**</exclude>
                                 <exclude>**/exception/**</exclude>
-                                <exclude>**/default/**</exclude>
+                                <exclude>**/documents/**</exclude>
+                                <exclude>**/dto/**</exclude>
+                                <exclude>**/enums/**</exclude>
                                 <exclude>**/utils/**</exclude>
                             </excludes>
                         </configuration>

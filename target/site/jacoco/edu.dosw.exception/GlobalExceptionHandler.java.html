@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>GlobalExceptionHandler.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ECIEXPRESS</a> &gt; <a href="index.source.html" class="el_package">edu.dosw.exception</a> &gt; <span class="el_source">GlobalExceptionHandler.java</span></div><h1>GlobalExceptionHandler.java</h1><pre class="source lang-java linenums">package edu.dosw.exception;
+
+import edu.dosw.application.dto.ErrorResponse;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.validation.ConstraintViolationException;
+import jakarta.validation.ValidationException;
+import java.util.stream.Collectors;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.HttpMessageNotReadableException;
+import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+
+@ControllerAdvice
+<span class="nc" id="L19">public class GlobalExceptionHandler {</span>
+
+<span class="nc" id="L21">    private static final Logger logger = LoggerFactory.getLogger(GlobalExceptionHandler.class);</span>
+
+    /**
+     * Handles business rule violations
+     *
+     * @param ex The BusinessException that was thrown
+     * @param request The HTTP request that caused the exception
+     * @return ResponseEntity with error details
+     */
+    @ExceptionHandler(BusinessException.class)
+    public ResponseEntity&lt;ErrorResponse&gt; handleBusinessException(
+            BusinessException ex, HttpServletRequest request) {
+<span class="nc" id="L33">        logger.error(&quot;Business error at {}: {}&quot;, request.getRequestURI(), ex.getMessage(), ex);</span>
+<span class="nc" id="L34">        return buildResponse(</span>
+<span class="nc" id="L35">                HttpStatus.BAD_REQUEST, &quot;BUSINESS_ERROR&quot;, ex.getMessage(), request.getRequestURI());</span>
+    }
+
+    /**
+     * Handles requests for resources that cannot be found
+     *
+     * @param ex The ResourceNotFoundException that was thrown
+     * @param request The HTTP request that caused the exception
+     * @return ResponseEntity with error details
+     */
+    @ExceptionHandler(ResourceNotFoundException.class)
+    public ResponseEntity&lt;ErrorResponse&gt; handleResourceNotFound(
+            ResourceNotFoundException ex, HttpServletRequest request) {
+<span class="nc" id="L48">        logger.warn(&quot;Resource not found at {}: {}&quot;, request.getRequestURI(), ex.getMessage());</span>
+<span class="nc" id="L49">        return buildResponse(</span>
+<span class="nc" id="L50">                HttpStatus.NOT_FOUND, &quot;RESOURCE_NOT_FOUND&quot;, ex.getMessage(), request.getRequestURI());</span>
+    }
+
+    /**
+     * Handles attempts to create resources that already exist
+     *
+     * @param ex The ResourceAlreadyExistsException that was thrown
+     * @param request The HTTP request that caused the exception
+     * @return ResponseEntity with error details
+     */
+    @ExceptionHandler(ResourceAlreadyExistsException.class)
+    public ResponseEntity&lt;ErrorResponse&gt; handleResourceAlreadyExists(
+            ResourceAlreadyExistsException ex, HttpServletRequest request) {
+<span class="nc" id="L63">        logger.error(&quot;Conflict at {}: {}&quot;, request.getRequestURI(), ex.getMessage(), ex);</span>
+<span class="nc" id="L64">        return buildResponse(</span>
+<span class="nc" id="L65">                HttpStatus.CONFLICT, &quot;RESOURCE_ALREADY_EXISTS&quot;, ex.getMessage(), request.getRequestURI());</span>
+    }
+
+    /**
+     * Handles general validation exceptions
+     *
+     * @param ex The ValidationException that was thrown
+     * @param request The HTTP request that caused the exception
+     * @return ResponseEntity with error details
+     */
+    @ExceptionHandler(ValidationException.class)
+    public ResponseEntity&lt;ErrorResponse&gt; handleValidation(
+            ValidationException ex, HttpServletRequest request) {
+<span class="nc" id="L78">        logger.debug(&quot;Validation error at {}: {}&quot;, request.getRequestURI(), ex.getMessage());</span>
+<span class="nc" id="L79">        return buildResponse(</span>
+                HttpStatus.UNPROCESSABLE_ENTITY,
+                &quot;VALIDATION_ERROR&quot;,
+<span class="nc" id="L82">                ex.getMessage(),</span>
+<span class="nc" id="L83">                request.getRequestURI());</span>
+    }
+
+    /**
+     * Handles method argument validation failures
+     *
+     * @param ex The MethodArgumentNotValidException that was thrown
+     * @param request The HTTP request that caused the exception
+     * @return ResponseEntity with error details
+     */
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity&lt;ErrorResponse&gt; handleValidationExceptions(
+            MethodArgumentNotValidException ex, HttpServletRequest request) {
+<span class="nc" id="L96">        String errors =</span>
+<span class="nc" id="L97">                ex.getBindingResult().getFieldErrors().stream()</span>
+<span class="nc" id="L98">                        .map(error -&gt; error.getField() + &quot;: &quot; + error.getDefaultMessage())</span>
+<span class="nc" id="L99">                        .collect(Collectors.joining(&quot;, &quot;));</span>
+<span class="nc" id="L100">        logger.debug(&quot;Invalid arguments at {}: {}&quot;, request.getRequestURI(), errors);</span>
+<span class="nc" id="L101">        return buildResponse(</span>
+<span class="nc" id="L102">                HttpStatus.BAD_REQUEST, &quot;INVALID_ARGUMENTS&quot;, errors, request.getRequestURI());</span>
+    }
+
+    /**
+     * Handles constraint violation exceptions
+     *
+     * @param ex The ConstraintViolationException that was thrown
+     * @param request The HTTP request that caused the exception
+     * @return ResponseEntity with error details
+     */
+    @ExceptionHandler(ConstraintViolationException.class)
+    public ResponseEntity&lt;ErrorResponse&gt; handleConstraintViolation(
+            ConstraintViolationException ex, HttpServletRequest request) {
+<span class="nc" id="L115">        String errors =</span>
+<span class="nc" id="L116">                ex.getConstraintViolations().stream()</span>
+<span class="nc" id="L117">                        .map(v -&gt; v.getPropertyPath() + &quot;: &quot; + v.getMessage())</span>
+<span class="nc" id="L118">                        .collect(Collectors.joining(&quot;, &quot;));</span>
+<span class="nc" id="L119">        logger.debug(&quot;Constraint violation at {}: {}&quot;, request.getRequestURI(), errors);</span>
+<span class="nc" id="L120">        return buildResponse(</span>
+<span class="nc" id="L121">                HttpStatus.BAD_REQUEST, &quot;CONSTRAINT_VIOLATION&quot;, errors, request.getRequestURI());</span>
+    }
+
+    /**
+     * Handles malformed JSON requests
+     *
+     * @param ex The HttpMessageNotReadableException that was thrown
+     * @param request The HTTP request that caused the exception
+     * @return ResponseEntity with error details
+     */
+    @ExceptionHandler(HttpMessageNotReadableException.class)
+    public ResponseEntity&lt;ErrorResponse&gt; handleHttpMessageNotReadable(
+            HttpMessageNotReadableException ex, HttpServletRequest request) {
+<span class="nc" id="L134">        logger.error(&quot;Malformed JSON at {}: {}&quot;, request.getRequestURI(), ex.getMessage(), ex);</span>
+<span class="nc" id="L135">        return buildResponse(</span>
+                HttpStatus.BAD_REQUEST,
+                &quot;MALFORMED_JSON&quot;,
+<span class="nc" id="L138">                &quot;JSON mal formado: &quot; + ex.getMostSpecificCause().getMessage(),</span>
+<span class="nc" id="L139">                request.getRequestURI());</span>
+    }
+
+
+    /**
+     * Handles data integrity violations (e.g., duplicate keys, foreign key constraints)
+     *
+     * @param ex The DataIntegrityViolationException that was thrown
+     * @param request The HTTP request that caused the exception
+     * @return ResponseEntity with error details
+     */
+    @ExceptionHandler(DataIntegrityViolationException.class)
+    public ResponseEntity&lt;ErrorResponse&gt; handleDataIntegrityViolation(
+            DataIntegrityViolationException ex, HttpServletRequest request) {
+<span class="nc" id="L153">        logger.error(</span>
+<span class="nc" id="L154">                &quot;Data integrity violation at {}: {}&quot;, request.getRequestURI(), ex.getMessage(), ex);</span>
+<span class="nc" id="L155">        return buildResponse(</span>
+                HttpStatus.CONFLICT,
+                &quot;DATA_INTEGRITY_ERROR&quot;,
+<span class="nc" id="L158">                &quot;Error de integridad de datos: &quot; + ex.getMostSpecificCause().getMessage(),</span>
+<span class="nc" id="L159">                request.getRequestURI());</span>
+    }
+
+    /**
+     * Handles all other uncaught exceptions
+     *
+     * @param ex The Exception that was thrown
+     * @param request The HTTP request that caused the exception
+     * @return ResponseEntity with error details
+     */
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity&lt;ErrorResponse&gt; handleGeneral(Exception ex, HttpServletRequest request) {
+<span class="nc" id="L171">        logger.error(&quot;Unexpected error at {}: {}&quot;, request.getRequestURI(), ex.getMessage(), ex);</span>
+<span class="nc" id="L172">        return buildResponse(</span>
+                HttpStatus.INTERNAL_SERVER_ERROR,
+                &quot;UNEXPECTED_ERROR&quot;,
+<span class="nc" id="L175">                &quot;Error inesperado: &quot; + ex.getMessage(),</span>
+<span class="nc" id="L176">                request.getRequestURI());</span>
+    }
+
+    /**
+     * Builds a standardized error response
+     *
+     * @param status The HTTP status code
+     * @param code The application-specific error code
+     * @param message The error message
+     * @param path The request path where the error occurred
+     * @return ResponseEntity containing the ErrorResponse
+     */
+    private ResponseEntity&lt;ErrorResponse&gt; buildResponse(
+            HttpStatus status, String code, String message, String path) {
+<span class="nc" id="L190">        ErrorResponse errorResponse =</span>
+<span class="nc" id="L191">                new ErrorResponse(status.value(), status.getReasonPhrase(), code, message, path);</span>
+<span class="nc" id="L192">        return new ResponseEntity&lt;&gt;(errorResponse, status);</span>
+    }
+
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity&lt;ErrorResponse&gt; handleIllegalArgument(
+            IllegalArgumentException ex, HttpServletRequest request) {
+<span class="nc" id="L198">        logger.warn(&quot;Illegal argument at {}: {}&quot;, request.getRequestURI(), ex.getMessage());</span>
+<span class="nc" id="L199">        return buildResponse(</span>
+                HttpStatus.BAD_REQUEST,
+                &quot;INVALID_ARGUMENT&quot;,
+<span class="nc" id="L202">                ex.getMessage(),</span>
+<span class="nc" id="L203">                request.getRequestURI());</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span></div></body></html>

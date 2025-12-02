@@ -14,3 +14,4 @@ public interface AdminRepositoryPort {
     boolean existsByEmail(Email email);
     void delete(Admin admin);
 }
+

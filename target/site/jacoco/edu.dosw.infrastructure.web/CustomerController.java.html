@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CustomerController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ECIEXPRESS</a> &gt; <a href="index.source.html" class="el_package">edu.dosw.infrastructure.web</a> &gt; <span class="el_source">CustomerController.java</span></div><h1>CustomerController.java</h1><pre class="source lang-java linenums">package edu.dosw.infrastructure.web;
+
+import edu.dosw.application.ports.CustomerUseCases.CreateCustomerUseCase;
+import edu.dosw.application.ports.CustomerUseCases.GetCustomerUseCase;
+import edu.dosw.application.ports.CustomerUseCases.UpdateCustomerUseCase;
+import edu.dosw.application.ports.UpdatePasswordUseCase;
+import edu.dosw.application.ports.CustomerUseCases.DeleteCustomerUseCase;
+import edu.dosw.application.dto.command.UpdatePasswordCommand;
+import edu.dosw.domain.model.ValueObject.UserId;
+import edu.dosw.application.dto.CustomerDTO;
+import edu.dosw.application.dto.CustomerUpdateDTO;
+import edu.dosw.application.dto.PasswordUpdateRequestDTO;
+import edu.dosw.infrastructure.web.mappers.CustomerWebMapper;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping(&quot;/users/customers&quot;)
+<span class="nc" id="L20">@RequiredArgsConstructor</span>
+public class CustomerController {
+
+    private final CreateCustomerUseCase createCustomerUseCase;
+    private final GetCustomerUseCase getCustomerUseCase;
+    private final UpdateCustomerUseCase updateCustomerUseCase;
+    private final UpdatePasswordUseCase updatePasswordUseCase;
+    private final DeleteCustomerUseCase deleteCustomerUseCase;
+    private final CustomerWebMapper customerWebMapper;
+
+    @PostMapping
+    public ResponseEntity&lt;CustomerDTO&gt; createCustomer(@RequestBody CustomerDTO customerDTO) {
+<span class="nc" id="L32">        var command = customerWebMapper.toCommand(customerDTO);</span>
+<span class="nc" id="L33">        CustomerDTO result = createCustomerUseCase.createCustomer(command);</span>
+<span class="nc" id="L34">        return ResponseEntity.ok(result);</span>
+    }
+
+    @GetMapping(&quot;/{customerId}&quot;)
+    public ResponseEntity&lt;CustomerDTO&gt; getCustomer(@PathVariable String customerId) {
+<span class="nc" id="L39">        CustomerDTO customer = getCustomerUseCase.getCustomerById(new UserId(customerId));</span>
+<span class="nc" id="L40">        return ResponseEntity.ok(customer);</span>
+    }
+
+    @PutMapping(&quot;/{customerId}/password&quot;)
+    public ResponseEntity&lt;PasswordUpdateRequestDTO&gt; updatePassword(@PathVariable String customerId,
+                                                                   @RequestBody PasswordUpdateRequestDTO request) {
+<span class="nc" id="L46">        var command = new UpdatePasswordCommand(new UserId(customerId), request.newPassword());</span>
+<span class="nc" id="L47">        PasswordUpdateRequestDTO result = updatePasswordUseCase.updatePassword(command);</span>
+<span class="nc" id="L48">        return ResponseEntity.ok(result);</span>
+    }
+
+    @PutMapping(&quot;/{customerId}&quot;)
+    public ResponseEntity&lt;CustomerUpdateDTO&gt; updateCustomer(@PathVariable String customerId,
+                                                            @RequestBody CustomerUpdateDTO customerUpdateDTO) {
+<span class="nc" id="L54">        var command = customerWebMapper.toCommand(customerUpdateDTO);</span>
+<span class="nc" id="L55">        CustomerUpdateDTO result = updateCustomerUseCase.updateCustomer(new UserId(customerId), command);</span>
+<span class="nc" id="L56">        return ResponseEntity.ok(result);</span>
+    }
+
+    @DeleteMapping(&quot;/{customerId}&quot;)
+    public ResponseEntity&lt;Void&gt; deleteCustomer(@PathVariable String customerId) {
+<span class="nc" id="L61">        deleteCustomerUseCase.deleteCustomer(new UserId(customerId));</span>
+<span class="nc" id="L62">        return ResponseEntity.noContent().build();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span></div></body></html>
