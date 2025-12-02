@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="230e7b10-050c-4a50-b491-f32d57da1137" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/docs/images/componentesEspecifico.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/images/componentesGeneral.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/images/despliegueAzureDev.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/images/despliegueAzureProd.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/images/jacoco.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/jacoco.exec" beforeDir="false" afterPath="$PROJECT_DIR$/target/jacoco.exec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.application.services.AdminServices.CreateAdminServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.application.services.AdminServices.CreateAdminServiceTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.application.services.AdminServices.DeleteAdminServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.application.services.AdminServices.DeleteAdminServiceTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.application.services.AdminServices.GetAdminServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.application.services.AdminServices.GetAdminServiceTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.application.services.AdminServices.UpdateAdminServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.application.services.AdminServices.UpdateAdminServiceTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.application.services.CustomerServices.CreateCustomerServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.application.services.CustomerServices.CreateCustomerServiceTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.application.services.CustomerServices.DeleteCustomerServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.application.services.CustomerServices.DeleteCustomerServiceTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.application.services.CustomerServices.GetCustomerServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.application.services.CustomerServices.GetCustomerServiceTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.application.services.CustomerServices.UpdateCustomerServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.application.services.CustomerServices.UpdateCustomerServiceTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.application.services.PasswordResetServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.application.services.PasswordResetServiceTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.application.services.SellerServices.CreateSellerServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.application.services.SellerServices.CreateSellerServiceTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.application.services.SellerServices.DeleteSellerServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.application.services.SellerServices.DeleteSellerServiceTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.application.services.SellerServices.GetAllSellersServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.application.services.SellerServices.GetAllSellersServiceTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.application.services.SellerServices.GetSellerServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.application.services.SellerServices.GetSellerServiceTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.application.services.SellerServices.UpdateSellerServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.application.services.SellerServices.UpdateSellerServiceTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.application.services.UpdatePasswordServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.application.services.UpdatePasswordServiceTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.application.services.UserServices.GetUserCredentialsServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.application.services.UserServices.GetUserCredentialsServiceTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.domain.model.UserTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.domain.model.UserTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.domain.model.ValueObject.EmailTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.domain.model.ValueObject.EmailTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.domain.model.ValueObject.FullNameTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.domain.model.ValueObject.FullNameTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.domain.model.ValueObject.IdentityDocumentTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.domain.model.ValueObject.IdentityDocumentTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.domain.model.ValueObject.PasswordHashTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.domain.model.ValueObject.PasswordHashTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.domain.model.ValueObject.UserIdTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.domain.model.ValueObject.UserIdTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.domain.model.ValueObject.VerificationCodeTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.domain.model.ValueObject.VerificationCodeTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.infrastructure.event.PasswordResetEventPublisherTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.infrastructure.event.PasswordResetEventPublisherTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.infrastructure.persistence.mappers.AdminMongoMapperTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.infrastructure.persistence.mappers.AdminMongoMapperTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.infrastructure.persistence.mappers.CustomerMongoMapperTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.infrastructure.persistence.mappers.CustomerMongoMapperTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.infrastructure.persistence.mappers.SellerMongoMapperTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.infrastructure.persistence.mappers.SellerMongoMapperTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.infrastructure.persistence.mappers.UserMongoMapperTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.infrastructure.persistence.mappers.UserMongoMapperTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.infrastructure.web.mappers.AdminWebMapperTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.infrastructure.web.mappers.AdminWebMapperTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.infrastructure.web.mappers.CustomerWebMapperTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.infrastructure.web.mappers.CustomerWebMapperTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.infrastructure.web.mappers.SellerWebMapperTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.infrastructure.web.mappers.SellerWebMapperTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.infrastructure.web.mappers.UserWebMapperTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.dosw.infrastructure.web.mappers.UserWebMapperTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.application.services.AdminServices.CreateAdminServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.application.services.AdminServices.CreateAdminServiceTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.application.services.AdminServices.DeleteAdminServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.application.services.AdminServices.DeleteAdminServiceTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.application.services.AdminServices.GetAdminServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.application.services.AdminServices.GetAdminServiceTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.application.services.AdminServices.UpdateAdminServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.application.services.AdminServices.UpdateAdminServiceTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.application.services.CustomerServices.CreateCustomerServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.application.services.CustomerServices.CreateCustomerServiceTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.application.services.CustomerServices.DeleteCustomerServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.application.services.CustomerServices.DeleteCustomerServiceTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.application.services.CustomerServices.GetCustomerServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.application.services.CustomerServices.GetCustomerServiceTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.application.services.CustomerServices.UpdateCustomerServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.application.services.CustomerServices.UpdateCustomerServiceTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.application.services.PasswordResetServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.application.services.PasswordResetServiceTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.application.services.SellerServices.CreateSellerServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.application.services.SellerServices.CreateSellerServiceTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.application.services.SellerServices.DeleteSellerServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.application.services.SellerServices.DeleteSellerServiceTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.application.services.SellerServices.GetAllSellersServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.application.services.SellerServices.GetAllSellersServiceTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.application.services.SellerServices.GetSellerServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.application.services.SellerServices.GetSellerServiceTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.application.services.SellerServices.UpdateSellerServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.application.services.SellerServices.UpdateSellerServiceTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.application.services.UpdatePasswordServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.application.services.UpdatePasswordServiceTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.application.services.UserServices.GetUserCredentialsServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.application.services.UserServices.GetUserCredentialsServiceTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.domain.model.UserTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.domain.model.UserTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.domain.model.ValueObject.EmailTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.domain.model.ValueObject.EmailTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.domain.model.ValueObject.FullNameTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.domain.model.ValueObject.FullNameTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.domain.model.ValueObject.IdentityDocumentTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.domain.model.ValueObject.IdentityDocumentTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.domain.model.ValueObject.PasswordHashTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.domain.model.ValueObject.PasswordHashTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.domain.model.ValueObject.UserIdTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.domain.model.ValueObject.UserIdTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.domain.model.ValueObject.VerificationCodeTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.domain.model.ValueObject.VerificationCodeTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.infrastructure.event.PasswordResetEventPublisherTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.infrastructure.event.PasswordResetEventPublisherTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.infrastructure.persistence.mappers.AdminMongoMapperTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.infrastructure.persistence.mappers.AdminMongoMapperTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.infrastructure.persistence.mappers.CustomerMongoMapperTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.infrastructure.persistence.mappers.CustomerMongoMapperTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.infrastructure.persistence.mappers.SellerMongoMapperTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.infrastructure.persistence.mappers.SellerMongoMapperTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.infrastructure.persistence.mappers.UserMongoMapperTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.infrastructure.persistence.mappers.UserMongoMapperTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.infrastructure.web.mappers.CustomerWebMapperTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.infrastructure.web.mappers.CustomerWebMapperTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.infrastructure.web.mappers.SellerWebMapperTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.infrastructure.web.mappers.SellerWebMapperTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.infrastructure.web.mappers.UserWebMapperTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/edu.dosw.infrastructure.web.mappers.UserWebMapperTest.txt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="GitHub Workflow" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Juanseom&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/ECIXPRESS/TSUKUYOMI-GestionUsuarios-Backend.git&quot;,
+    &quot;accountId&quot;: &quot;5cf60ca1-8553-4d99-bc4a-94c8c59be0a0&quot;
+  }
+}</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="35kLW8EAov5m1XGawjxDRiITkzs" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.AdminMongoMapperTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AdminWebMapperTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CreateAdminServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CreateCustomerServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CreateSellerServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CustomerMongoMapperTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CustomerWebMapperTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DeleteAdminServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DeleteCustomerServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DeleteSellerServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.EmailTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FullNameTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GetAdminServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GetAllSellersServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GetCustomerServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GetSellerServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GetUserCredentialsServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.IdentityDocumentTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PasswordHashTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PasswordResetEventPublisherTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PasswordResetServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SellerMongoMapperTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SellerWebMapperTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UpdateAdminServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UpdateCustomerServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UpdatePasswordServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UpdateSellerServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserIdTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserMongoMapperTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserWebMapperTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.VerificationCodeTest.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.ECIEXPRESS-backend [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.ECIEXPRESS-backend [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.ECIEXPRESS-backend [test].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.Application.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/PruebasUnitarias-ECIExpress__64&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/UNIVERSIDAD/DOSW/Proyecto ECIEXPRESS/TSUKUYOMI-GestionUsuarios-Backend&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\UNIVERSIDAD\DOSW\Proyecto ECIEXPRESS\TSUKUYOMI-GestionUsuarios-Backend\src" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="edu.dosw.domain.model.ValueObject" />
+      <recent name="edu.dosw.domain.model" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.PasswordResetEventPublisherTest">
+    <configuration name="AdminWebMapperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ECIEXPRESS-backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.dosw.infrastructure.web.mappers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.dosw.infrastructure.web.mappers" />
+      <option name="MAIN_CLASS_NAME" value="edu.dosw.infrastructure.web.mappers.AdminWebMapperTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustomerWebMapperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ECIEXPRESS-backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.dosw.infrastructure.web.mappers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.dosw.infrastructure.web.mappers" />
+      <option name="MAIN_CLASS_NAME" value="edu.dosw.infrastructure.web.mappers.CustomerWebMapperTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PasswordResetEventPublisherTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ECIEXPRESS-backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.dosw.infrastructure.event.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.dosw.infrastructure.event" />
+      <option name="MAIN_CLASS_NAME" value="edu.dosw.infrastructure.event.PasswordResetEventPublisherTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SellerWebMapperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ECIEXPRESS-backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.dosw.infrastructure.web.mappers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.dosw.infrastructure.web.mappers" />
+      <option name="MAIN_CLASS_NAME" value="edu.dosw.infrastructure.web.mappers.SellerWebMapperTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserWebMapperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ECIEXPRESS-backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.dosw.infrastructure.web.mappers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.dosw.infrastructure.web.mappers" />
+      <option name="MAIN_CLASS_NAME" value="edu.dosw.infrastructure.web.mappers.UserWebMapperTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="ECIEXPRESS-backend" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="edu.dosw.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.PasswordResetEventPublisherTest" />
+        <item itemvalue="JUnit.UserWebMapperTest" />
+        <item itemvalue="JUnit.SellerWebMapperTest" />
+        <item itemvalue="JUnit.CustomerWebMapperTest" />
+        <item itemvalue="JUnit.AdminWebMapperTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.28238.7" />
+        <option value="bundled-js-predefined-d6986cc7102b-a71380e98a7c-JavaScript-IU-252.28238.7" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="230e7b10-050c-4a50-b491-f32d57da1137" name="Changes" comment="" />
+      <created>1763649152276</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1763649152276</updated>
+      <workItem from="1763649154995" duration="2176000" />
+      <workItem from="1763681770403" duration="1249000" />
+      <workItem from="1763683069621" duration="66000" />
+      <workItem from="1764105004472" duration="4277000" />
+      <workItem from="1764119688559" duration="877000" />
+      <workItem from="1764120804278" duration="64000" />
+      <workItem from="1764164880081" duration="29592000" />
+      <workItem from="1764284401558" duration="1671000" />
+      <workItem from="1764288039763" duration="430000" />
+      <workItem from="1764295941093" duration="1311000" />
+      <workItem from="1764331972762" duration="7723000" />
+      <workItem from="1764640109347" duration="613000" />
+      <workItem from="1764693246104" duration="78000" />
+      <workItem from="1764696753082" duration="4620000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
+  </component>
+</project>

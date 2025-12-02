@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RedisVerificationCodeRepository.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ECIEXPRESS</a> &gt; <a href="index.source.html" class="el_package">edu.dosw.infrastructure.persistence</a> &gt; <span class="el_source">RedisVerificationCodeRepository.java</span></div><h1>RedisVerificationCodeRepository.java</h1><pre class="source lang-java linenums">package edu.dosw.infrastructure.persistence;
+
+import edu.dosw.domain.model.ValueObject.Email;
+import edu.dosw.domain.model.ValueObject.VerificationCode;
+import edu.dosw.domain.ports.VerificationCodeRepositoryPort;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.stereotype.Repository;
+
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.util.Map;
+import java.util.Optional;
+import java.util.concurrent.TimeUnit;
+
+<span class="nc" id="L17">@Slf4j</span>
+@Repository
+<span class="nc" id="L19">@RequiredArgsConstructor</span>
+public class RedisVerificationCodeRepository implements VerificationCodeRepositoryPort {
+
+    private final RedisTemplate&lt;String, Object&gt; redisTemplate;
+    private static final String KEY_PREFIX = &quot;verification_code:&quot;;
+
+    @Override
+    public VerificationCode save(VerificationCode verificationCode) {
+<span class="nc" id="L27">        String key = KEY_PREFIX + verificationCode.email();</span>
+
+        try {
+
+<span class="nc" id="L31">            Map&lt;String, Object&gt; codeData = Map.of(</span>
+<span class="nc" id="L32">                    &quot;code&quot;, verificationCode.code(),</span>
+<span class="nc" id="L33">                    &quot;expiresAt&quot;, verificationCode.expiresAt().toString(),</span>
+<span class="nc" id="L34">                    &quot;email&quot;, verificationCode.email(),</span>
+<span class="nc" id="L35">                    &quot;used&quot;, verificationCode.used()</span>
+            );
+
+<span class="nc" id="L38">            redisTemplate.opsForValue().set(key, codeData);</span>
+
+<span class="nc" id="L40">            long ttl = Duration.between(LocalDateTime.now(), verificationCode.expiresAt())</span>
+<span class="nc" id="L41">                    .toMinutes();</span>
+<span class="nc" id="L42">            redisTemplate.expire(key, Math.max(ttl, 1), TimeUnit.MINUTES);</span>
+
+<span class="nc" id="L44">            log.debug(&quot;Verification code saved for email: {}&quot;, verificationCode.email());</span>
+<span class="nc" id="L45">            return verificationCode;</span>
+
+<span class="nc" id="L47">        } catch (Exception e) {</span>
+<span class="nc" id="L48">            log.error(&quot;Error saving verification code for email: {}&quot;, verificationCode.email(), e);</span>
+<span class="nc" id="L49">            throw new RuntimeException(&quot;Failed to save verification code&quot;, e);</span>
+        }
+    }
+
+    @Override
+    public Optional&lt;VerificationCode&gt; findByEmail(Email email) {
+<span class="nc" id="L55">        String key = KEY_PREFIX + email.value();</span>
+
+        try {
+<span class="nc" id="L58">            Map&lt;String, Object&gt; codeData = (Map&lt;String, Object&gt;) redisTemplate.opsForValue().get(key);</span>
+
+<span class="nc bnc" id="L60" title="All 2 branches missed.">            if (codeData == null) {</span>
+<span class="nc" id="L61">                return Optional.empty();</span>
+            }
+
+<span class="nc" id="L64">            VerificationCode verificationCode = new VerificationCode(</span>
+<span class="nc" id="L65">                    (String) codeData.get(&quot;code&quot;),</span>
+<span class="nc" id="L66">                    LocalDateTime.parse((String) codeData.get(&quot;expiresAt&quot;)),</span>
+<span class="nc" id="L67">                    (String) codeData.get(&quot;email&quot;),</span>
+<span class="nc" id="L68">                    (Boolean) codeData.get(&quot;used&quot;)</span>
+            );
+
+<span class="nc" id="L71">            return Optional.of(verificationCode);</span>
+
+<span class="nc" id="L73">        } catch (Exception e) {</span>
+<span class="nc" id="L74">            log.error(&quot;Error retrieving verification code for email: {}&quot;, email.value(), e);</span>
+<span class="nc" id="L75">            return Optional.empty();</span>
+        }
+    }
+
+    @Override
+    public void deleteByEmail(Email email) {
+<span class="nc" id="L81">        String key = KEY_PREFIX + email.value();</span>
+
+        try {
+<span class="nc" id="L84">            Boolean deleted = redisTemplate.delete(key);</span>
+<span class="nc" id="L85">            log.debug(&quot;Verification code deleted for email: {}, success: {}&quot;, email.value(), deleted);</span>
+
+<span class="nc" id="L87">        } catch (Exception e) {</span>
+<span class="nc" id="L88">            log.error(&quot;Error deleting verification code for email: {}&quot;, email.value(), e);</span>
+<span class="nc" id="L89">        }</span>
+<span class="nc" id="L90">    }</span>
+
+    @Override
+    public boolean existsByEmail(Email email) {
+<span class="nc" id="L94">        String key = KEY_PREFIX + email.value();</span>
+
+        try {
+<span class="nc" id="L97">            return Boolean.TRUE.equals(redisTemplate.hasKey(key));</span>
+
+<span class="nc" id="L99">        } catch (Exception e) {</span>
+<span class="nc" id="L100">            log.error(&quot;Error checking verification code existence for email: {}&quot;, email.value(), e);</span>
+<span class="nc" id="L101">            return false;</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span></div></body></html>

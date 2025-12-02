@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UpdateSellerService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ECIEXPRESS</a> &gt; <a href="index.source.html" class="el_package">edu.dosw.application.services.SellerServices</a> &gt; <span class="el_source">UpdateSellerService.java</span></div><h1>UpdateSellerService.java</h1><pre class="source lang-java linenums">package edu.dosw.application.services.SellerServices;
+
+import edu.dosw.application.ports.SellerUseCases.UpdateSellerUseCase;
+import edu.dosw.application.dto.command.SellerCommands.UpdateSellerCommand;
+import edu.dosw.application.dto.SellerUpdateDTO;
+import edu.dosw.domain.model.Seller;
+import edu.dosw.domain.model.ValueObject.*;
+import edu.dosw.domain.ports.SellerRepositoryPort;
+import edu.dosw.domain.ports.UserRepositoryPort;
+import edu.dosw.exception.ResourceNotFoundException;
+import edu.dosw.infrastructure.web.mappers.SellerWebMapper;
+import lombok.RequiredArgsConstructor;
+
+<span class="fc" id="L14">@RequiredArgsConstructor</span>
+public class UpdateSellerService implements UpdateSellerUseCase {
+
+    private final SellerRepositoryPort sellerRepository;
+    private final UserRepositoryPort userRepository;
+    private final SellerWebMapper sellerWebMapper;
+
+    @Override
+    public SellerUpdateDTO updateSeller(UserId sellerId, UpdateSellerCommand command) {
+<span class="fc" id="L23">        Seller seller = sellerRepository.findByUserId(sellerId)</span>
+<span class="fc" id="L24">                .orElseThrow(() -&gt; new ResourceNotFoundException(&quot;Seller not found&quot;));</span>
+
+<span class="fc bfc" id="L26" title="All 4 branches covered.">        if (command.email() != null &amp;&amp; !command.email().equals(seller.getEmail().value())) {</span>
+<span class="fc" id="L27">            Email newEmail = new Email(command.email());</span>
+<span class="fc bfc" id="L28" title="All 2 branches covered.">            if (userRepository.existsByEmail(newEmail)) {</span>
+<span class="fc" id="L29">                throw new IllegalArgumentException(&quot;Email already exists&quot;);</span>
+            }
+        }
+
+<span class="fc" id="L33">        Seller updatedSeller = new Seller(</span>
+<span class="fc" id="L34">                seller.getUserId(),</span>
+<span class="fc bfc" id="L35" title="All 2 branches covered.">                command.identityDocument() != null ?</span>
+<span class="fc" id="L36">                        new IdentityDocument(command.identityDocument()) : seller.getIdentityDocument(),</span>
+<span class="fc bfc" id="L37" title="All 2 branches covered.">                command.email() != null ?</span>
+<span class="fc" id="L38">                        new Email(command.email()) : seller.getEmail(),</span>
+<span class="fc bfc" id="L39" title="All 2 branches covered.">                command.fullName() != null ?</span>
+<span class="fc" id="L40">                        new FullName(command.fullName()) : seller.getFullName(),</span>
+<span class="fc" id="L41">                seller.getPasswordHash(),</span>
+<span class="fc bfc" id="L42" title="All 2 branches covered.">                command.companyName() != null ? command.companyName() : seller.getCompanyName(),</span>
+<span class="fc bfc" id="L43" title="All 2 branches covered.">                command.businessAddress() != null ? command.businessAddress() : seller.getBusinessAddress()</span>
+        );
+
+<span class="fc" id="L46">        Seller savedSeller = sellerRepository.save(updatedSeller);</span>
+<span class="fc" id="L47">        userRepository.save(savedSeller);</span>
+
+<span class="fc" id="L49">        return sellerWebMapper.toUpdateDTO(savedSeller);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span></div></body></html>

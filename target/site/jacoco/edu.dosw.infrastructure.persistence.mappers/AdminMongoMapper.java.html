@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AdminMongoMapper.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ECIEXPRESS</a> &gt; <a href="index.source.html" class="el_package">edu.dosw.infrastructure.persistence.mappers</a> &gt; <span class="el_source">AdminMongoMapper.java</span></div><h1>AdminMongoMapper.java</h1><pre class="source lang-java linenums">package edu.dosw.infrastructure.persistence.mappers;
+
+
+import edu.dosw.domain.model.Admin;
+import edu.dosw.domain.model.ValueObject.*;
+import edu.dosw.infrastructure.persistence.documents.AdminDocument;
+import org.springframework.stereotype.Component;
+
+@Component
+<span class="fc" id="L10">public class AdminMongoMapper {</span>
+
+    public AdminDocument toDocument(Admin admin) {
+<span class="fc" id="L13">        return AdminDocument.builder()</span>
+<span class="fc" id="L14">                .userId(admin.getUserId().value())</span>
+<span class="fc" id="L15">                .identityDocument(admin.getIdentityDocument().value())</span>
+<span class="fc" id="L16">                .email(admin.getEmail().value())</span>
+<span class="fc" id="L17">                .fullName(admin.getFullName().value())</span>
+<span class="fc" id="L18">                .passwordHash(admin.getPasswordHash().value())</span>
+<span class="fc" id="L19">                .role(admin.getRole())</span>
+<span class="fc" id="L20">                .createdAt(admin.getCreatedAt())</span>
+<span class="fc" id="L21">                .build();</span>
+    }
+
+    public Admin toDomain(AdminDocument document) {
+<span class="fc bfc" id="L25" title="All 2 branches covered.">        if (document == null) return null;</span>
+
+<span class="fc" id="L27">        return new Admin(</span>
+<span class="fc" id="L28">                new UserId(document.getUserId()),</span>
+<span class="fc" id="L29">                new IdentityDocument(document.getIdentityDocument()),</span>
+<span class="fc" id="L30">                new Email(document.getEmail()),</span>
+<span class="fc" id="L31">                new FullName(document.getFullName()),</span>
+<span class="fc" id="L32">                new PasswordHash(document.getPasswordHash())</span>
+        );
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span></div></body></html>

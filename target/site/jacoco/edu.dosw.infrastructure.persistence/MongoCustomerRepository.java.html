@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MongoCustomerRepository.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ECIEXPRESS</a> &gt; <a href="index.source.html" class="el_package">edu.dosw.infrastructure.persistence</a> &gt; <span class="el_source">MongoCustomerRepository.java</span></div><h1>MongoCustomerRepository.java</h1><pre class="source lang-java linenums">package edu.dosw.infrastructure.persistence;
+
+
+import edu.dosw.domain.model.Customer;
+import edu.dosw.domain.model.ValueObject.UserId;
+import edu.dosw.domain.model.ValueObject.Email;
+import edu.dosw.domain.ports.CustomerRepositoryPort;
+import edu.dosw.infrastructure.persistence.documents.CustomerDocument;
+import edu.dosw.infrastructure.persistence.mappers.CustomerMongoMapper;
+import lombok.RequiredArgsConstructor;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.stereotype.Repository;
+
+import java.util.Optional;
+
+@Repository
+<span class="nc" id="L19">@RequiredArgsConstructor</span>
+public class MongoCustomerRepository implements CustomerRepositoryPort {
+
+    private final MongoTemplate mongoTemplate;
+    private final CustomerMongoMapper customerMapper;
+
+    @Override
+    public Customer save(Customer customer) {
+<span class="nc" id="L27">        CustomerDocument document = customerMapper.toDocument(customer);</span>
+<span class="nc" id="L28">        CustomerDocument saved = mongoTemplate.save(document);</span>
+<span class="nc" id="L29">        return customerMapper.toDomain(saved);</span>
+    }
+
+    @Override
+    public Optional&lt;Customer&gt; findByUserId(UserId userId) {
+<span class="nc" id="L34">        Query query = new Query(Criteria.where(&quot;userId&quot;).is(userId.value()));</span>
+<span class="nc" id="L35">        CustomerDocument document = mongoTemplate.findOne(query, CustomerDocument.class);</span>
+<span class="nc" id="L36">        return Optional.ofNullable(customerMapper.toDomain(document));</span>
+    }
+
+    @Override
+    public boolean existsByEmail(Email email) {
+<span class="nc" id="L41">        Query query = new Query(Criteria.where(&quot;email&quot;).is(email.value()));</span>
+<span class="nc" id="L42">        return mongoTemplate.exists(query, CustomerDocument.class);</span>
+    }
+
+    @Override
+    public void delete(Customer customer) {
+<span class="nc" id="L47">        CustomerDocument document = customerMapper.toDocument(customer);</span>
+<span class="nc" id="L48">        mongoTemplate.remove(document);</span>
+<span class="nc" id="L49">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span></div></body></html>

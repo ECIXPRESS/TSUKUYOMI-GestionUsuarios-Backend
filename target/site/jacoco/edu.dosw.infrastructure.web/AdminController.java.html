@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AdminController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ECIEXPRESS</a> &gt; <a href="index.source.html" class="el_package">edu.dosw.infrastructure.web</a> &gt; <span class="el_source">AdminController.java</span></div><h1>AdminController.java</h1><pre class="source lang-java linenums">package edu.dosw.infrastructure.web;
+
+import edu.dosw.application.ports.AdminUseCases.*;
+import edu.dosw.application.dto.command.AdminCommands.CreateAdminCommand;
+import edu.dosw.application.dto.command.AdminCommands.UpdateAdminCommand;
+import edu.dosw.domain.model.ValueObject.UserId;
+import edu.dosw.application.dto.AdminDTO;
+import edu.dosw.application.dto.AdminUpdateDTO;
+import edu.dosw.infrastructure.web.mappers.AdminWebMapper;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping(&quot;/users/admins&quot;)
+<span class="nc" id="L16">@RequiredArgsConstructor</span>
+public class AdminController {
+
+    private final CreateAdminUseCase createAdminUseCase;
+    private final GetAdminUseCase getAdminUseCase;
+    private final UpdateAdminUseCase updateAdminUseCase;
+    private final DeleteAdminUseCase deleteAdminUseCase;
+    private final AdminWebMapper adminWebMapper;
+
+    @PostMapping
+    public ResponseEntity&lt;AdminDTO&gt; createAdmin(@RequestBody AdminDTO adminDTO) {
+<span class="nc" id="L27">        CreateAdminCommand command = adminWebMapper.toCommand(adminDTO);</span>
+<span class="nc" id="L28">        AdminDTO result = createAdminUseCase.createAdmin(command);</span>
+<span class="nc" id="L29">        return ResponseEntity.ok(result);</span>
+    }
+
+    @GetMapping(&quot;/{adminId}&quot;)
+    public ResponseEntity&lt;AdminDTO&gt; getAdmin(@PathVariable String adminId) {
+<span class="nc" id="L34">        AdminDTO admin = getAdminUseCase.getAdminById(new UserId(adminId));</span>
+<span class="nc" id="L35">        return ResponseEntity.ok(admin);</span>
+    }
+
+    @PutMapping(&quot;/{adminId}&quot;)
+    public ResponseEntity&lt;AdminUpdateDTO&gt; updateAdmin(@PathVariable String adminId,
+                                                      @RequestBody AdminUpdateDTO adminUpdateDTO) {
+<span class="nc" id="L41">        UpdateAdminCommand command = adminWebMapper.toCommand(adminUpdateDTO);</span>
+<span class="nc" id="L42">        AdminUpdateDTO result = updateAdminUseCase.updateAdmin(new UserId(adminId), command);</span>
+<span class="nc" id="L43">        return ResponseEntity.ok(result);</span>
+    }
+
+    @DeleteMapping(&quot;/{adminId}&quot;)
+    public ResponseEntity&lt;Void&gt; deleteAdmin(@PathVariable String adminId) {
+<span class="nc" id="L48">        deleteAdminUseCase.deleteAdmin(new UserId(adminId));</span>
+<span class="nc" id="L49">        return ResponseEntity.noContent().build();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span></div></body></html>
