@@ -685,14 +685,18 @@ Esta es capturada por el **Global Exception Handler**, que devuelve una respuest
 
 La siguiente tabla resume los principales tipos de excepciones manejadas en el sistema, junto con su respectivo código HTTP y un ejemplo de mensaje retornado:
 
-| **Excepción** | **Código HTTP** | **Descripción del error** | **Ejemplo de mensaje**                                 |
-|---------------|-----------------|---------------------------|--------------------------------------------------------|
-| `IllegalArgumentException` | `400 Bad Request` | Parámetros inválidos o peticiones mal estructuradas | *"El campo 'subjectId' no puede ser nulo."*            |
-| `MethodArgumentNotValidException` | `400 Bad Request` | Error de validación en un DTO o parámetro de entrada | *"El correo electrónico no cumple el formato válido."* |
-| `EntityNotFoundException` | `404 Not Found` | El recurso solicitado no existe en la base de datos | *"La materia con ID AYPR no existe."*                  |
-| `DuplicateKeyException` | `409 Conflict` | Intento de crear un registro que ya existe en MongoDB | *"El usuario ya se encuentra registrado."*             |
-| `AccessDeniedException` | `403 Forbidden` | Intento de acceder a un recurso sin permisos | *"Acceso denegado para el rol Usuario."*               |
-| `Exception` | `500 Internal Server Error` | Error interno no controlado del servidor | *"Error inesperado del servidor."*                     |
+| **Excepción** | **Código HTTP** | **Descripción del error** | **Ejemplo de mensaje** |
+|---------------|-----------------|---------------------------|------------------------|
+| `IllegalArgumentException` | `400 Bad Request` | Parámetros inválidos o peticiones mal estructuradas | *"Customer with this email already exists"* |
+| `MethodArgumentNotValidException` | `400 Bad Request` | Error de validación en un DTO o parámetro de entrada | *"email: El correo electrónico no es válido, fullName: El nombre completo no puede estar vacío"* |
+| `ConstraintViolationException` | `400 Bad Request` | Violación de restricciones de validación en parámetros | *"userId: no puede ser nulo, email: formato de correo inválido"* |
+| `HttpMessageNotReadableException` | `400 Bad Request` | JSON mal formado o no legible en el cuerpo de la petición | *"JSON mal formado: Unexpected character..."* |
+| `BusinessException` | `400 Bad Request` | Violación de reglas de negocio del sistema | *"No se puede realizar la operación solicitada"* |
+| `ResourceNotFoundException` | `404 Not Found` | El recurso solicitado no existe en la base de datos | *"User not found"*, *"Seller not found"* |
+| `ResourceAlreadyExistsException` | `409 Conflict` | Intento de crear un recurso que ya existe en el sistema | *"El recurso ya existe en el sistema"* |
+| `DataIntegrityViolationException` | `409 Conflict` | Violación de integridad de datos (claves duplicadas, restricciones FK) | *"Error de integridad de datos: duplicate key error"* |
+| `ValidationException` | `422 Unprocessable Entity` | Error general de validación de datos | *"Los datos proporcionados no son válidos"* |
+| `Exception` | `500 Internal Server Error` | Error interno no controlado del servidor | *"Error inesperado: NullPointerException..."* |
 
 ---
 
