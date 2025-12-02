@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: edu.dosw.domain.model.UserTest
 -------------------------------------------------------------------------------
-Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 s -- in edu.dosw.domain.model.UserTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.075 s -- in edu.dosw.domain.model.UserTest
